@@ -5,6 +5,15 @@
     },
     "libraries": [
         {
+            "name": "choc-tilter-riser-parametric",
+            "repo": "https://github.com/steeb-k/choc-tilter-riser-parametric.git",
+            "branch": "main",
+            "zipIncludes": [
+                "*.scad",
+                "LICENSE"
+            ]
+        },
+        {
             "name": "openscad",
             "repo": "https://github.com/openscad/openscad.git",
             "branch": "master",

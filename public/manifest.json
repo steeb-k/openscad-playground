@@ -1,6 +1,6 @@
 {
   "short_name": "OpenSCAD",
-  "name": "OpenSCAD Playground",
+  "name": "steeb's OpenSCAD Playground",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +20,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#1f2937",
+  "background_color": "#1f2937"
 }

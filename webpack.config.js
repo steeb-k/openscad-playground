@@ -40,6 +40,10 @@ const config = [
           exclude: /node_modules/,
         },
         {
+          test: /\.scad$/,
+          type: 'asset/source',
+        },
+        {
           test: /\.css$/i,
           use: [
             'style-loader',

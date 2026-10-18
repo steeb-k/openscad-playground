@@ -3,9 +3,9 @@
 import defaultScad from './default-scad.ts';
 import { State } from './app-state.ts';
 
-export const defaultSourcePath = '/playground.scad';
+export const defaultSourcePath = '/choc_tilter_riser_parametric.scad';
 export const defaultModelColor = '#f9d72c';
-const defaultBlurhash = "|KSPX^%3~qtjMx$lR*x]t7n,R%xuxbM{WBt7ayfk_3bY9FnAt8XOxanjNF%fxbMyIn%3t7NFoLaeoeV[WBo{xar^IoS1xbxcR*S0xbofRjV[j[kCNGofxaWBNHW-xasDR*WTkBxuWBM{s:t7bYahRjfkozWUadofbIW:jZ";
+const defaultBlurhash: string | undefined = undefined;
   
 export function createInitialState(state: State | null, source?: {content?: string, path?: string, url?: string, blurhash?: string}): State {
 

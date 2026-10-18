@@ -5,6 +5,7 @@ import { Symlinks } from "./filesystem";
 export type ZipArchives = {
   [name: string]: {
     deployed?: boolean,
+    pinned?: boolean,
     description?: string,
     gitOrigin?: {
       repoUrl: string,
@@ -22,6 +23,15 @@ export type ZipArchives = {
 
 export const zipArchives: ZipArchives = {
   'fonts': {},
+  'choc-tilter-riser-parametric': {
+    description: 'Choc v1 keycap riser / tilter adapter',
+    pinned: true,
+    gitOrigin: {
+      branch: 'main',
+      repoUrl: 'https://github.com/steeb-k/choc-tilter-riser-parametric',
+      include: [{glob: ['*.scad', 'LICENSE']}],
+    },
+  },
   'openscad': {
     description: 'OpenSCAD',
     gitOrigin: {
@@ -226,4 +236,9 @@ export const zipArchives: ZipArchives = {
 export const deployedArchiveNames =
   Object.entries(zipArchives)
     .filter(([_, {deployed}]) => deployed == null || deployed)
+    .map(([n]) => n);
+
+export const pinnedArchiveNames =
+  Object.entries(zipArchives)
+    .filter(([_, {pinned}]) => pinned)
     .map(([n]) => n);

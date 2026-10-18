@@ -6,10 +6,11 @@ import { TreeNode } from 'primereact/treenode';
 import { ModelContext, FSContext } from './contexts.ts';
 import { getParentDir, join } from '../fs/filesystem.ts';
 import { defaultSourcePath } from '../state/initial-state.ts';
-import { zipArchives } from '../fs/zip-archives.ts';
+import { zipArchives, pinnedArchiveNames } from '../fs/zip-archives.ts';
 
-const biasedCompare = (a: string, b: string) => 
-  a === 'openscad' ? -1 : b === 'openscad' ? 1 : a.localeCompare(b);
+const rank = (n: string) => pinnedArchiveNames.includes(n) ? 0 : n === 'openscad' ? 1 : 2;
+const biasedCompare = (a: string, b: string) =>
+  rank(a) - rank(b) || a.localeCompare(b);
 
 function listFilesAsNodes(fs: FS, path: string, accept?: (path: string) => boolean): TreeNode[] {
   const files: [string, string][] = []

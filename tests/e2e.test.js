@@ -97,7 +97,13 @@ describe('e2e', () => {
   test('load the default page', async () => {
     await page.goto(baseUrl);
     await waitForViewer();
-    expectObjectList();
+    expect3DManifold();
+  }, longTimeout);
+
+  test('load the choc riser from the bundled repo', async () => {
+    await loadPath('/libraries/choc-tilter-riser-parametric/choc_tilter_riser_parametric.scad');
+    await waitForViewer();
+    expect3DManifold();
   }, longTimeout);
 
   test('can render cube', async () => {
