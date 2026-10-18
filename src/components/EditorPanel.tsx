@@ -168,6 +168,7 @@ export default function EditorPanel({className, style}: {className?: string, sty
           <Editor
             className="openscad-editor absolute-fill"
             defaultLanguage="openscad"
+            theme="vs-dark"
             path={state.params.activePath}
             value={model.source}
             onChange={s => model.source = s ?? ''}
